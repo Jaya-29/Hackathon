@@ -1,0 +1,19 @@
+import mysql.connector
+
+# Connect to MySQL
+db_connection = mysql.connector.connect(
+    host="localhost",
+    user="gjaya",
+    password="G@jaya#957",
+    database="yourdatabase"
+)
+
+# Create a cursor object
+cursor = db_connection.cursor()
+
+# Create transactions table
+cursor.execute("CREATE TABLE transactions (TransactionID INT AUTO_INCREMENT PRIMARY KEY, Amount DECIMAL(10, 2), Description VARCHAR(255))")
+
+# Commit changes and close connection
+db_connection.commit()
+db_connection.close()
